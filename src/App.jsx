@@ -1,12 +1,11 @@
 import './App.css';
-import NavBar from './components/NavBar';
-import ItemListContainer from './components/ItemListContainer';
+import MainRouter from './routes/MainRouter';
+
 
 function App() {
   return (
     <div className="App">
-      <NavBar />
-      <ItemListContainer greeting={'Hello, I am a React component'} />
+      <MainRouter />
     </div>
   );
 }
