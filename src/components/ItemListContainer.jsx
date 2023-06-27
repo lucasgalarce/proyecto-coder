@@ -1,17 +1,20 @@
-import React from 'react'
-import ProductCard from './ProductCard'
+import React from "react";
+import ProductCard from "./ProductCard";
+import Row from "react-bootstrap/Row";
 
-const ItemListContainer = ({productsData}) => {
+const ItemListContainer = ({ productsData }) => {
   return (
-    <div>
-      <h1 style={{color: 'blue'}}>Products</h1>
-      {
-        productsData.map(product => 
-         <ProductCard key={product.id} productData={product}/> 
-        )
-      }
+    <div className="container">
+      <Row>
+        {productsData.map((product, index) => (
+          <React.Fragment key={product.id}>
+            <ProductCard productData={product} />
+            {(index + 1) % 4 === 0 && <div className="w-100" style={{ marginBottom: "16px" }} />}
+          </React.Fragment>
+        ))}
+      </Row>
     </div>
-  )
-}
+  );
+};
 
-export default ItemListContainer
+export default ItemListContainer;
